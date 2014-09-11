@@ -1,2 +1,10 @@
-Stwórz klasę Logger, z metodą log akceptującą parametr `message` typu string.
-Po wywołaniu metody log() zawartość pliku /tmp/output zostanie nadpisana wartością `message`.
+Stwórz funkcję capitalize która dla listy imion podanych jako parametr typu list zwróci listę skapitalizowanych imion.
+Jeżeli przekazana lista jest pusta, funkcja rzucić wyjątek TypeError z komunikatem "Required params missing"
+
+Np: 
+
+capitalize(["marcin", "kasia", "basia"]) 
+
+zwróci rezultat:
+
+["Marcin", "Kasia", "Basia"]

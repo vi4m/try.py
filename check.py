@@ -23,13 +23,15 @@ style_result = test_result = None
 
 try:
     print("Style checking....")
-    style_result = subprocess.check_call("flake8 %s.py 1>&2" % task, shell=True)
+    style_result = subprocess.check_call(
+        "flake8 %s.py 1>&2" % task, shell=True)
 except subprocess.CalledProcessError:
     print("Style check failed, fix errors!")
 
 try:
     print("Unit test checking....")
-    test_result = subprocess.check_call("nosetests %s.py" % task, shell=True)
+    test_result = subprocess.check_call(
+        "nosetests -s %s.py" % task, shell=True)
 except subprocess.CalledProcessError:
     print("Unit test failed. Please fix errors!")
 

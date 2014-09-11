@@ -1,12 +1,2 @@
-Stwórz klasę ServersList, która przy tworzeniu obiektu będzie wymagać parametru :filename:.
-Po stworzeniu obiektu i wywołaniu metody "filter" zwróci listę nazw hostów z pliku /tmp/input tylko tych wiersze których nazwa hosta zaczynają się od [a-z][0-9]+
-
-Przykładowe wiersze które wyświetli:
-
-s10335.dc2:127.0.0.1:venture1
-s10448.dc2:127.0.3.1:venture2
-
-Nie wyświetli wierszy:
-
-12345-test:127.0.0.1:test
-aaaaaaaaaa:127.0.0.1:test
+Stwórz klasę Logger, z metodą log akceptującą parametr `message` typu string.
+Po wywołaniu metody log() zawartość pliku /tmp/output zostanie nadpisana wartością `message`.

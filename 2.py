@@ -4,18 +4,25 @@
 import unittest
 
 
-class Logger:
-    def log(self, s):
-        with open("/tmp/output", "w+") as f:
-            f.write(s)
+def capitalize(l):
+    if not l:
+        raise TypeError("You should define your list!")
+    result = []
+    for i in l:
+        result.append(i.capitalize())
+    return result
 
 
-class LoggerTest(unittest.TestCase):
+class SumTest(unittest.TestCase):
 
     def setUp(self):
-        self.logger = Logger()
+        pass
 
-    def testLog(self):
-        example = "sometest"
-        self.logger.log(example)
-        self.assertEquals(open("/tmp/output", "r").read(), example)
+    def testSum(self):
+        self.assertEquals(
+            capitalize(["raz", "dwa", "trzy"]), ["Raz", "Dwa", "Trzy"]
+        )
+
+    def testEmpty(self):
+        with self.assertRaises(TypeError):
+            capitalize([])
