@@ -4,16 +4,13 @@
 import unittest
 
 
-class Logger:
-    def log(self, s):
-        with open("/tmp/output", "w+") as f:
-            f.write(s)
+# write solution here
 
 
-class LoggerTest(unittest.TestCase):
+class DoogieTest(unittest.TestCase):
 
     def setUp(self):
-        self.logger = Logger()
+        self.logger = Doogie()
 
     def testLog(self):
         example = "sometest"

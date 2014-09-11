@@ -5,17 +5,7 @@ import unittest
 import re
 
 
-class ServersList(object):
-
-    def __init__(self, filename):
-        self.filename = filename
-
-    def filter(self):
-        with open(self.filename, "r") as f:
-            for line in f:
-                hostname, ip, venture = line.split(":")
-                if re.match("[a-zA-Z][0-9]+", hostname):
-                    yield hostname
+# write solution here
 
 
 class LoggerTest(unittest.TestCase):

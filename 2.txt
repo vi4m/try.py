@@ -1,5 +1,5 @@
 Stwórz funkcję capitalize która dla listy imion podanych jako parametr typu list zwróci listę skapitalizowanych imion.
-Jeżeli przekazana lista jest pusta, funkcja rzucić wyjątek TypeError z komunikatem "Required params missing"
+Jeżeli przekazana lista jest pusta, funkcja powinna rzucić wyjątek TypeError z komunikatem "Required params missing"
 
 Np: 
 

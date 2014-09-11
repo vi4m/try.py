@@ -4,14 +4,7 @@
 import unittest
 
 
-def capitalize(l):
-    if not l:
-        raise TypeError("You should define your list!")
-    result = []
-    for i in l:
-        result.append(i.capitalize())
-    return result
-
+# write here solution
 
 class SumTest(unittest.TestCase):
 
