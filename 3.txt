@@ -1,2 +1,4 @@
-Stwórz klasę Doogie, z metodą log akceptującą parametr `message` typu string.
-Po wywołaniu metody log() zawartość pliku /tmp/output zostanie nadpisana wartością `message`.
+Mini logger zapisujący dany komunikat do pliku.
+------------------------------------------------
+Stwórz klasę Logger, z metodą log akceptującą parametr `message` typu string.
+Po wywołaniu metody log() do zawartości pliku /tmp/output zostanie dopisana `message` wraz ze znakiem nowej linii.

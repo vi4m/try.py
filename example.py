@@ -62,4 +62,4 @@ if __name__ == "__main__":
         Pinger(low_ip, high_ip).ping_all()
     except InvalidIPError:
         print("First IP should be lower")
-        sys.exit(0)
+        sys.exit(1)
