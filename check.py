@@ -13,8 +13,12 @@ import subprocess
 
 parser = argparse.ArgumentParser(description='Check quiz')
 parser.add_argument('task', metavar='task', type=str)
+parser.add_argument('hard', metavar='hard', type=str)
+
 args = parser.parse_args()
 task = args.task
+hard = args.hard
+
 if ".py" in task:
     task.replace(".py", "")
 task = int(task)
@@ -26,7 +30,8 @@ try:
     style_result = subprocess.check_call(
         "flake8 %s.py 1>&2" % task, shell=True)
 except subprocess.CalledProcessError:
-    print("Style check failed, fix errors!")
+    pass
+    #print("Style check failed, fix errors!")
 
 try:
     print("Unit test checking....")
@@ -36,10 +41,12 @@ except subprocess.CalledProcessError:
     print("Unit test failed. Please fix errors!")
 
 print("-" * 80)
-if (style_result == 0) and (test_result == 0):
-    print("Great!")
-elif style_result != 0:
-    print("Style check failed.")
-else:
-    print("Almost! You have to fix your code style!")
-print("-"*80)
+if (test_result == 0):
+    print("Great job!")
+
+if hard:
+    if style_result != 0:
+        print("Not compatible with pep8.")
+    else:
+        print("Yeah. Compatible with pep8.")
+    print("-"*80)
