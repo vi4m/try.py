@@ -13,6 +13,7 @@ import argparse
 import unittest
 import subprocess
 
+
 def which(program):
     def is_exe(fpath):
         return os.path.isfile(fpath) and os.access(fpath, os.X_OK)
@@ -53,7 +54,7 @@ if __name__ == '__main__':
             "flake8 %s.py 1>&2" % task, shell=True)
     except subprocess.CalledProcessError:
         pass
-        #print("Style check failed, fix errors!")
+        # print("Style check failed, fix errors!")
 
     try:
         print("Unit test checking....")
