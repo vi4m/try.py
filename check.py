@@ -38,23 +38,12 @@ if __name__ == '__main__':
     args = parser.parse_args()
     task = args.task
     hard = args.hard
-    if not which("flake8"):
-        print("flake8 missing")
-        sys.exit(1)
 
     if ".py" in task:
         task = task.replace(".py", "")
     task = int(task)
     suite = unittest.TestSuite()
     style_result = test_result = None
-
-    try:
-        print("Style checking....")
-        style_result = subprocess.check_call(
-            "flake8 %s.py 1>&2" % task, shell=True)
-    except subprocess.CalledProcessError:
-        pass
-        # print("Style check failed, fix errors!")
 
     try:
         print("Unit test checking....")
@@ -68,6 +57,17 @@ if __name__ == '__main__':
         print("Great job!")
 
     if hard:
+        if not which("flake8"):
+            print("flake8 missing")
+            sys.exit(1)
+        try:
+            print("Style checking....")
+            style_result = subprocess.check_call(
+                "flake8 %s.py 1>&2" % task, shell=True)
+        except subprocess.CalledProcessError:
+            pass
+            # print("Style check failed, fix errors!")
+
         if style_result != 0:
             print("Not compatible with pep8.")
         else:
