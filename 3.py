@@ -13,8 +13,13 @@ class DoogieTest(unittest.TestCase):
         self.logger = Logger()
 
     def testLog(self):
-        os.unlink("/tmp/output")
+        try:
+            os.unlink("/tmp/output")
+        except OSError:
+            print("File doesn't exist, probably first run")
+
         example = "sometest"
         self.logger.log(example)
         self.logger.log(example)
-        self.assertEquals(open("/tmp/output", "r").read(), example + "\n" + example + "\n")
+        self.assertEquals(
+            open("/tmp/output", "r").read(), example + "\n" + example + "\n")
