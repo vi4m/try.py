@@ -1,5 +1,5 @@
 Stwórz klasę ServersList, która przy tworzeniu obiektu będzie wymagać parametru :filename:.
-Po stworzeniu obiektu i wywołaniu metody "filter" zwróci listę nazw hostów z pliku /tmp/input tylko tych wiersze których nazwa hosta ma postać:
+Po stworzeniu obiektu i wywołaniu metody "filter" zwróci listę nazw hostów z pliku /tmp/input, ale tylko tych wierszy których nazwa hosta ma postać:
 1. Pierwszy znak nazwy hosta jest literą(małą lub wielką)
 2. Drugi znak nazwy hosta musi być cyfrą
 
