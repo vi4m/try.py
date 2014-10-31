@@ -7,7 +7,7 @@ import os
 
 # write solution here
 
-class DoogieTest(unittest.TestCase):
+class LoggerTest(unittest.TestCase):
 
     def setUp(self):
         self.logger = Logger()
